@@ -1,0 +1,92 @@
+object fmMain: TfmMain
+  Left = 338
+  Height = 569
+  Top = 146
+  Width = 533
+  Caption = 'Win10 Security 1.2'
+  ClientHeight = 569
+  ClientWidth = 533
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 536
+    Width = 144
+    Anchors = [akLeft, akBottom]
+    Caption = 'Применить (ко всем)'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object lbDescription: TLabel
+    Left = 8
+    Height = 104
+    Top = 424
+    Width = 513
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'Данная программа не удаляет компоненты Windows, а только отключает их, вы всегда можете сбросить настройки до заводских.'
+    Font.Height = 16
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object vstTweaks: TVirtualStringTree
+    Left = 8
+    Height = 408
+    Top = 8
+    Width = 513
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    DefaultText = 'Node'
+    Header.AutoSizeIndex = 0
+    Header.Columns = <>
+    Header.DefaultHeight = 17
+    Header.MainColumn = -1
+    TabOrder = 1
+    TreeOptions.MiscOptions = [toAcceptOLEDrop, toCheckSupport, toFullRepaintOnResize, toInitOnSave, toToggleOnDblClick, toWheelPanning, toEditOnClick]
+    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toThemeAware, toUseBlendedImages]
+    OnBeforeCellPaint = vstTweaksBeforeCellPaint
+    OnChecking = vstTweaksChecking
+    OnFocusChanged = vstTweaksFocusChanged
+    OnFreeNode = vstTweaksFreeNode
+    OnGetText = vstTweaksGetText
+    OnInitNode = vstTweaksInitNode
+  end
+  object PopupMenu1: TPopupMenu
+    left = 152
+    top = 488
+    object MenuItem1: TMenuItem
+      Caption = 'Выбрать только рекомендуемые настройки'
+      ImageIndex = 0
+      OnClick = MenuItem1Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Выбрать только рекомендуемые и ограниченные настройки'
+      ImageIndex = 1
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Выбрать все настройки'
+      ImageIndex = 2
+      OnClick = MenuItem3Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Сбросить настройки по умолчанию'
+      ImageIndex = 3
+      OnClick = MenuItem6Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Создать точку восстановления системы'
+      Visible = False
+      OnClick = MenuItem7Click
+    end
+  end
+end

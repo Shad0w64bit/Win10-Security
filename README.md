@@ -1,7 +1,7 @@
 # Win10-Security
 
 Compile:
-  Lazarus 1.6.2 FPC 3.0.0
+  Lazarus 1.6.2 FPC 3.0.0,
   Component VirtualTreeView
 
 Description:
